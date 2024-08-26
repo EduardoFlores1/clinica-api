@@ -1,0 +1,15 @@
+version: '3'
+services:
+  clinic-container:
+    container_name: clinic-container
+    image: postgres:15.2
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: db_clinic
+      POSTGRES_USER: usuario
+      POSTGRES_PASSWORD: usuario123
+    ports:
+      - "5431:5431"
+    expose:
+      - 5431
+    command: -p 5431
